@@ -4,7 +4,7 @@ Projekt został stworzony z wykorzystaniem React oraz TypeScript we frameworku N
 
 Projekt wymaga pliku .dot.env w katalogu głównym wraz z kluczem API Open Weather. Przykładowy plik .dot.env:
 ```
-API_KEY=560d11c2ead133749c1c1ae094812c47
+API_KEY=470d11c2ead133749c1c1ae094812c47
 ```
 
 Instalacja paczek:
@@ -13,7 +13,7 @@ Instalacja paczek:
 npm i
 ```
 
-Uruchomienie wersji developerskiej:
+Uruchomienie wersji deweloperskiej:
 ```bash
 npm run dev
 ```
