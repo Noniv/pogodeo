@@ -32,6 +32,7 @@ const Home: NextPage = () => {
   useEffect(() => {
     if (!localStorage.getItem("user")) router.push("/");
     getCitiesFromStorage();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleClick = () => {
@@ -66,14 +67,14 @@ const Home: NextPage = () => {
         </svg>
       </button>
 
-      <div className=" py-12">
+      <main className=" pt-12 pb-20">
         <SearchBar />
-        <div className="mt-12 flex gap-6 flex-wrap justify-evenly">
+        <div className="mt-12 flex gap-6 flex-wrap justify-evenly max-w-6xl mx-auto">
           {useCities((state) => state.cities).map((e) => {
             return <CityCard key={e.id} city={e} />;
           })}
         </div>
-      </div>
+      </main>
     </>
   );
 };
