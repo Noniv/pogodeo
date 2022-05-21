@@ -55,6 +55,7 @@ const Details = ({ cityId, closeFunc }: Props) => {
 
   useEffect(() => {
     getWeather();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   ChartJS.register(
@@ -140,7 +141,7 @@ const Details = ({ cityId, closeFunc }: Props) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-slate-200 z-20 w-screen h-screen pt-16">
+    <section className="fixed inset-0 bg-slate-200 z-20 w-screen h-screen pt-16">
       <div className="relative">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -157,7 +158,7 @@ const Details = ({ cityId, closeFunc }: Props) => {
             d="M6 18L18 6M6 6l12 12"
           />
         </svg>
-        <div className="text-center py-4 font-bold">{cityName}</div>
+        <h2 className="text-center py-4 font-bold">{cityName}</h2>
         <div className=" flex flex-col m-auto h-screen max-w-2xl">
           <div className="px-4 py-8 h-[40%]">
             <Line
@@ -176,7 +177,7 @@ const Details = ({ cityId, closeFunc }: Props) => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
