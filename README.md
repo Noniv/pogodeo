@@ -1,6 +1,6 @@
 Projekt został stworzony z wykorzystaniem React oraz TypeScript we frameworku Next.js.
 
-## Uruchowmienie projektu
+## Uruchomienie projektu
 
 Projekt wymaga pliku .dot.env w katalogu głównym wraz z kluczem API Open Weather. Przykładowy plik .dot.env:
 ```
