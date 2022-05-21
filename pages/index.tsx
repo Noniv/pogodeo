@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { FormEventHandler, useEffect, useState } from "react";
 
 const Login: NextPage = () => {
   const [username, setUsername] = useState("");
@@ -12,13 +12,15 @@ const Login: NextPage = () => {
 
   useEffect(() => {
     if (localStorage.getItem("user")) router.push("/home");
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     if (username === "admin" && password === "admin") {
       router.push("/home");
       localStorage.setItem("user", "admin");
     } else setError(true);
+    e.preventDefault();
   };
 
   return (
@@ -27,7 +29,7 @@ const Login: NextPage = () => {
         <title>Pogodeo - zaloguj</title>
         <meta name="description" content="Pogodeo" />
       </Head>
-      <div className="flex flex-col justify-center items-center w-full h-full px-4">
+      <main className="flex flex-col justify-center items-center w-full h-full px-4">
         <form
           className="bg-white shadow-2xl flex items-center flex-col gap-6 py-16 px-8 rounded-xl max-w-4xl w-full"
           action=""
@@ -62,7 +64,7 @@ const Login: NextPage = () => {
             <span></span>
           )}
         </form>
-      </div>
+      </main>
     </>
   );
 };
