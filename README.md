@@ -1,4 +1,4 @@
-Projekt został stworzony z wykorzystaniem Reacta oraz TypeScript we frameworku Next.js.
+Projekt został stworzony z wykorzystaniem React oraz TypeScript we frameworku Next.js.
 
 ## Uruchowmienie projektu
 
