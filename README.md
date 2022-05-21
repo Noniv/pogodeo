@@ -7,6 +7,8 @@ Projekt wymaga pliku .dot.env w katalogu głównym wraz z kluczem API Open Weath
 API_KEY=470d11c2ead133749c1c1ae094812c47
 ```
 
+Aby użyć poniższych komend, wymagana jest instalacja Node.js (https://nodejs.org).
+
 Instalacja paczek:
 
 ```bash
