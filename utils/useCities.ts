@@ -21,10 +21,7 @@ export const useCities = create<CitiesState>((set) => ({
   cities: [],
   add: (city) =>
     set((state) => {
-      let unique = true;
-      state.cities.forEach((e) => {
-        if (e.id === city.id) unique = false;
-      });
+      const unique = !state.cities.some((e) => e.id === city.id);
       if (unique) {
         localStorage.setItem(
           "cities",
@@ -38,11 +35,11 @@ export const useCities = create<CitiesState>((set) => ({
       const filteredCities = state.cities.filter((e) => {
         return e !== city;
       });
-      
+
       if (filteredCities.length > 0)
         localStorage.setItem(
           "cities",
-          JSON.stringify([filteredCities.map((e) => e.id)])
+          JSON.stringify(filteredCities.map((e) => e.id))
         );
       else localStorage.removeItem("cities");
       return {
