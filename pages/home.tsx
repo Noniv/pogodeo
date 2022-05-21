@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import SearchBar from "../components/searchbar";
 import useCities from "../utils/useCities";
@@ -24,7 +24,7 @@ const Home: NextPage = () => {
           .then((response) => response.json())
           .then((data) => {
             cities.add(data);
-          });
+          }).catch((error) => console.log(error));
       });
     }
   };

@@ -21,6 +21,7 @@ const Details = ({ cityId, closeFunc }: Props) => {
   const [humidities, setHumidities] = useState<Array<String>>([]);
   const [times, setTimes] = useState<Array<String>>([]);
   const [cityName, setCityName] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const getWeather = async () => {
     const temperatureList: String[] = [];
@@ -50,12 +51,14 @@ const Details = ({ cityId, closeFunc }: Props) => {
         setTemperatures(temperatureList);
         setHumidities(humiditiesList);
         setTimes(timesList);
-      });
+        setLoading(false);
+      })
+      .catch((error) => console.log(error));
   };
 
   useEffect(() => {
     getWeather();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   ChartJS.register(
@@ -159,23 +162,27 @@ const Details = ({ cityId, closeFunc }: Props) => {
           />
         </svg>
         <h2 className="text-center py-4 font-bold">{cityName}</h2>
-        <div className=" flex flex-col m-auto h-screen max-w-2xl">
-          <div className="px-4 py-8 h-[40%]">
-            <Line
-              options={optionsTemperature}
-              data={dataTemperature}
-              className="max-h-full"
-            />
-          </div>
+        {loading ? (
+          <div className="text-center text-red-500">Błąd</div>
+        ) : (
+          <div className=" flex flex-col m-auto h-screen max-w-2xl">
+            <div className="px-4 py-8 h-[40%]">
+              <Line
+                options={optionsTemperature}
+                data={dataTemperature}
+                className="max-h-full"
+              />
+            </div>
 
-          <div className="px-4 py-8 h-[40%]">
-            <Line
-              options={optionsHumidity}
-              data={dataHumidity}
-              className="max-h-full"
-            />
+            <div className="px-4 py-8 h-[40%]">
+              <Line
+                options={optionsHumidity}
+                data={dataHumidity}
+                className="max-h-full"
+              />
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
