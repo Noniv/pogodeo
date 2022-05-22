@@ -31,7 +31,7 @@ const SearchBar = () => {
   const handleItemClick = () => {
     setCities([]);
     setError("");
-    setSearchText("")
+    setSearchText("");
   };
 
   return (
@@ -43,10 +43,11 @@ const SearchBar = () => {
           setSearchText(e.target.value);
         }}
         onKeyDown={(e) => {
-          if (e.key === "Backspace") {
+          if (e.key === "Enter") handleSubmit();
+          else {
             setCities([]);
             setError("");
-          } else if (e.key === "Enter") handleSubmit();
+          }
         }}
         value={searchText}
         placeholder="Wpisz nazwę miasta..."
