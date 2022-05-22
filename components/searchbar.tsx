@@ -55,7 +55,7 @@ const SearchBar = () => {
       {cities.length ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-7 w-7 absolute right-2 top-2 z-50 cursor-pointer"
+          className="h-7 w-7 absolute right-4 top-2 z-50 cursor-pointer"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
