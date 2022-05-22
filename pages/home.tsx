@@ -1,6 +1,6 @@
 import { NextPage } from "next";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { useEffect } from "react";
+import Router from "next/router";
 import SearchBar from "../components/searchbar";
 import useCities from "../utils/useCities";
 import CityCard from "../components/city";
@@ -8,7 +8,6 @@ import Head from "next/head";
 
 const Home: NextPage = () => {
   const cities = useCities();
-  const router = useRouter();
   const getCitiesFromStorage = async () => {
     const storageData = localStorage.getItem("cities");
     if (storageData != null) {
@@ -24,20 +23,21 @@ const Home: NextPage = () => {
           .then((response) => response.json())
           .then((data) => {
             cities.add(data);
-          }).catch((error) => console.log(error));
+          })
+          .catch((error) => console.log(error));
       });
     }
   };
 
   useEffect(() => {
-    if (!localStorage.getItem("user")) router.push("/");
+    if (!localStorage.getItem("user")) Router.push("/");
     getCitiesFromStorage();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleClick = () => {
     localStorage.removeItem("user");
-    router.push("/");
+    Router.push("/");
   };
 
   return (

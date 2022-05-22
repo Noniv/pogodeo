@@ -1,23 +1,20 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useRouter } from "next/router";
-import { FormEventHandler, useEffect, useState } from "react";
+import Router from "next/router";
+import { useEffect, useState } from "react";
 
 const Login: NextPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
 
-  const router = useRouter();
-
   useEffect(() => {
-    if (localStorage.getItem("user")) router.push("/home");
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    if (localStorage.getItem("user")) Router.push("/home");
   }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     if (username === "admin" && password === "admin") {
-      router.push("/home");
+      Router.push("/home");
       localStorage.setItem("user", "admin");
     } else setError(true);
     e.preventDefault();
