@@ -20,7 +20,7 @@ const SearchBar = () => {
     getData();
   }, []);
 
-  const handleClick = () => {
+  const handleSubmit = () => {
     const filteredCities = (data as Array<City>).filter(
       (val) => val.name.toLowerCase() === searchText.toLowerCase()
     );
@@ -46,7 +46,7 @@ const SearchBar = () => {
           if (e.key === "Backspace") {
             setCities([]);
             setError("");
-          } else if (e.key === "Enter") handleClick();
+          } else if (e.key === "Enter") handleSubmit();
         }}
         value={searchText}
         placeholder="Wpisz nazwę miasta..."
@@ -60,7 +60,7 @@ const SearchBar = () => {
       </div>
       <div className="text-red-500 h-6">{error}</div>
       <button
-        onClick={handleClick}
+        onClick={handleSubmit}
         className="block border-2 border-sky-800 rounded-lg bg-sky-800 py-2 px-4 w-full mt-4 text-white hover:bg-sky-600"
       >
         Szukaj

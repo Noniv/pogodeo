@@ -32,11 +32,11 @@ const City = ({ city }: Props) => {
       .catch((error) => console.log(error));
   };
 
-  const handleClick = () => {
+  const handleRemove = () => {
     cities.remove(city);
   };
 
-  const handleButtonClick = () => {
+  const handleDetails = () => {
     setDetails(!details);
   };
 
@@ -54,7 +54,7 @@ const City = ({ city }: Props) => {
   return (
     <>
       {details ? (
-        <Details cityId={city.id} closeFunc={handleButtonClick} />
+        <Details cityId={city.id} closeFunc={handleDetails} />
       ) : (
         <></>
       )}
@@ -69,7 +69,7 @@ const City = ({ city }: Props) => {
             viewBox="0 0 24 24"
             stroke="currentColor"
             strokeWidth={2}
-            onClick={handleClick}
+            onClick={handleRemove}
           >
             <path
               strokeLinecap="round"
@@ -89,7 +89,7 @@ const City = ({ city }: Props) => {
             </div>
             <button
               className="block border-2 border-sky-800 rounded-lg bg-sky-800 py-2 px-4 w-4/5 mx-auto mb-4 text-white hover:bg-sky-600 text-xs absolute bottom-0 left-0 right-0 lg:text-lg"
-              onClick={handleButtonClick}
+              onClick={handleDetails}
             >
               Szczegóły
             </button>
