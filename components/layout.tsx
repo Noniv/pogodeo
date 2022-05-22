@@ -9,7 +9,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         </header>
         <div className="flex-grow relative">
         {children}
-        <footer className="bg-sky-800 w-full text-xl text-white p-4 border-b-white border-t-2 absolute bottom-0 z-40">
+        <footer className="bg-sky-800 w-full text-xl text-white p-4 border-b-white border-t-2 absolute bottom-0 z-10">
           Realizacja: Maksymilian Dendura
         </footer>
         </div>
