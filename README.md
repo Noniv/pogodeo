@@ -1,3 +1,5 @@
+Strona dostępna pod adresem: https://pogodeo.vercel.app/
+
 Projekt został stworzony z wykorzystaniem React oraz TypeScript we frameworku Next.js.
 
 ## Uruchomienie projektu
