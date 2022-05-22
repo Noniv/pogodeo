@@ -44,8 +44,8 @@ const SearchItem = ({ city, onItemClick }: Props) => {
       )}
       {city.name}
       <div className="text-sm">
-        Długość: {city.coord.lon.toString().slice(0, 5)}° <br />
-        Szerokość: {city.coord.lat.toString().slice(0, 5)}°
+        Długość: {city.coord.lon.toString().slice(0, 8)}° <br />
+        Szerokość: {city.coord.lat.toString().slice(0, 8)}°
       </div>
     </div>
   );
