@@ -22,6 +22,7 @@ const Details = ({ cityId, closeFunc }: Props) => {
   const [times, setTimes] = useState<Array<String>>([]);
   const [cityName, setCityName] = useState("");
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   const getWeather = async () => {
     const temperatureList: String[] = [];
@@ -53,7 +54,7 @@ const Details = ({ cityId, closeFunc }: Props) => {
         setTimes(timesList);
         setLoading(false);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => setError("Błąd"));
   };
 
   useEffect(() => {
@@ -163,7 +164,7 @@ const Details = ({ cityId, closeFunc }: Props) => {
         </svg>
         <h2 className="text-center py-4 font-bold">{cityName}</h2>
         {loading ? (
-          <div className="text-center text-red-500">Błąd</div>
+          <div className="text-center text-red-500">{error}</div>
         ) : (
           <div className=" flex flex-col m-auto h-screen max-w-2xl">
             <div className="px-4 py-8 h-[40%]">
