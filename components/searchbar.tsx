@@ -26,13 +26,8 @@ const SearchBar = () => {
         city.name.toLowerCase().includes(searchText.toLowerCase().trim())
       )
       .slice(0, 5);
-    if (filteredCities.length > 0) {
-      setCities(filteredCities);
-      setError("");
-    } else if (searchText.length > 0) {
-      setError("Nie znaleziono miasta.");
-      setCities([]);
-    }
+    if (filteredCities.length > 0) setCities(filteredCities);
+    else setError("Nie znaleziono miasta.");
   };
 
   const handleClose = () => {
@@ -48,11 +43,13 @@ const SearchBar = () => {
         className="block border-2 rounded-lg w-full px-2 py-2 relative z-10"
         onChange={(e) => {
           setSearchText(e.target.value);
-          handleSubmit();
-          if (searchText.length < 2) setCities([]);
         }}
         onKeyDown={(e) => {
           if (e.key === "Enter") handleSubmit();
+          else {
+            setCities([]);
+            setError("");
+          }
         }}
         value={searchText}
         placeholder="Wpisz nazwę miasta..."
