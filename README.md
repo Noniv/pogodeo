@@ -1,24 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Projekt został stworzony z wykorzystaniem React oraz TypeScript we frameworku Next.js.
 
-## Getting Started
+## Uruchomienie projektu
 
-This project requires .dot.env file in the root folder with Open Weather API Key. Example of the .dot.env file:
+Projekt wymaga pliku .dot.env w katalogu głównym wraz z kluczem API Open Weather. Przykładowy plik .dot.env:
 ```
-API_KEY=560d11c2ead133749c1c1ae094812c47
+API_KEY=470d11c2ead133749c1c1ae094812c47
 ```
 
-Install the packages:
+Aby użyć poniższych komend, wymagana jest instalacja Node.js (https://nodejs.org).
+
+Instalacja paczek:
 
 ```bash
 npm i
 ```
 
-Then, run the development server:
+Uruchomienie wersji deweloperskiej:
 ```bash
 npm run dev
 ```
 
-Or build and run the production:
+Uruchomienie wersji produkcyjnej:
 ```bash
 npm run build
 npm run start
