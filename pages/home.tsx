@@ -67,7 +67,7 @@ const Home: NextPage = () => {
         </svg>
       </button>
 
-      <main className=" pt-12 pb-20">
+      <main className=" pt-12 pb-28">
         <SearchBar />
         <div className="mt-12 flex gap-6 flex-wrap justify-evenly max-w-6xl mx-auto">
           {useCities((state) => state.cities).map((e) => {

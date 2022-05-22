@@ -7,9 +7,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <header className="bg-sky-800 w-full text-center text-xl font-bold text-white p-4 border-b-white border-b-2 sticky top-0 z-40">
           <h1>Pogodeo</h1>
         </header>
-        <div className="flex-grow">
+        <div className="flex-grow relative">
         {children}
-        <footer className="bg-sky-800 w-full text-xl text-white p-4 border-b-white border-t-2 fixed bottom-0 z-40">
+        <footer className="bg-sky-800 w-full text-xl text-white p-4 border-b-white border-t-2 absolute bottom-0 z-40">
           Realizacja: Maksymilian Dendura
         </footer>
         </div>
