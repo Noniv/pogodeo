@@ -25,3 +25,10 @@ Uruchomienie wersji produkcyjnej:
 npm run build
 npm run start
 ```
+## Logowanie
+
+Aby korzystać z aplikacji, konieczne jest zalogowanie się:
+```
+Login: admin
+Hasło: admin
+```
