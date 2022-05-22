@@ -21,9 +21,11 @@ const SearchBar = () => {
   }, []);
 
   const handleSubmit = () => {
-    const filteredCities = (data as Array<City>).filter(
-      (val) => val.name.toLowerCase() === searchText.toLowerCase()
-    );
+    const filteredCities = (data as Array<City>)
+      .filter((city) =>
+        city.name.toLowerCase().includes(searchText.toLowerCase().trim())
+      )
+      .slice(0, 10);
     if (filteredCities.length > 0) setCities(filteredCities);
     else setError("Nie znaleziono miasta.");
   };
@@ -35,12 +37,13 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="w-4/5 max-w-5xl mx-auto z-10 relative">
+    <div className="w-4/5 max-w-5xl mx-auto z-20 relative">
       <input
         type="text"
         className="block border-2 rounded-lg w-full px-2 py-2 relative z-10"
         onChange={(e) => {
           setSearchText(e.target.value);
+          handleSubmit();
         }}
         onKeyDown={(e) => {
           if (e.key === "Enter") handleSubmit();
