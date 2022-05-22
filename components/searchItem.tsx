@@ -13,11 +13,7 @@ const SearchItem = ({ city, onItemClick }: Props) => {
     onItemClick();
   };
   const cityAdded = () => {
-    let contains = false;
-    cities.cities.forEach((e) => {
-      if (e === city) contains = true;
-    });
-    return contains;
+    return cities.cities.some((e) => e.id === city.id);
   };
   return (
     <div
