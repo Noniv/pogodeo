@@ -23,9 +23,9 @@ const SearchBar = () => {
   const handleSubmit = () => {
     const filteredCities = (data as Array<City>)
       .filter((city) =>
-        city.name.toLowerCase().includes(searchText.toLowerCase().trim())
+        city.name.toLowerCase().startsWith(searchText.toLowerCase().trim())
       )
-      .slice(0, 5);
+      .slice(0, 6);
     if (filteredCities.length > 0) setCities(filteredCities);
     else setError("Nie znaleziono miasta.");
   };
