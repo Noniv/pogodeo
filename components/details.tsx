@@ -59,6 +59,7 @@ const Details = ({ cityId, closeFunc }: Props) => {
 
   useEffect(() => {
     getWeather();
+    // Empty dependecy array to prevent infinite loop - warning disabled
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

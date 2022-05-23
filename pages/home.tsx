@@ -32,6 +32,7 @@ const Home: NextPage = () => {
   useEffect(() => {
     if (!localStorage.getItem("user")) Router.push("/");
     getCitiesFromStorage();
+    // Empty dependecy array to prevent infinite loop - warning disabled
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

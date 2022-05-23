@@ -48,6 +48,7 @@ const City = ({ city }: Props) => {
     return () => {
       clearInterval(weatherInterval);
     };
+  // getWeather not in dependecy array to prevent infinite loop - warning disabled
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [details]);
 
