@@ -32,6 +32,7 @@ const Login: NextPage = () => {
           action=""
           onSubmit={handleSubmit}
         >
+          <div className="self-start italic">Testowe dane logowania: admin admin</div>
           <label className="w-full">
             Nazwa użytkownika
             <input
